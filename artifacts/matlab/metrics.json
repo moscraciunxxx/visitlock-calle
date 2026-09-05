@@ -1,0 +1,9 @@
+{
+  "called": 5,
+  "confirmed": 3,
+  "reschedule_count": 1,
+  "confirmation_rate": 60.0,
+  "no_show_risk": 10.0,
+  "source": "matlab_visitlock_metrics",
+  "engine": "MATLAB R2025b"
+}

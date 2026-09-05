@@ -1,0 +1,5 @@
+confirmation_rate=60.0
+no_show_risk=10.0
+confirmed=3
+called=5
+reschedule_count=1

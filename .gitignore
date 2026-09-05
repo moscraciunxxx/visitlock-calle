@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# VisitLock runtime
+visitlock_ledger.json
+visitlock_board.json
+*.pem
+*_api_key*
+.DS_Store
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# VoiceBank local only
+VoiceBank/
+bank/
+wavs/
+*.wav

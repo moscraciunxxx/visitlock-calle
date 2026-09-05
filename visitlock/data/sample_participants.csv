@@ -1,0 +1,6 @@
+participant_id,name,phone,visit_datetime,visit_type,site_label,region,locale
+P001,Maya Chen,+15550100100,2026-09-10 09:00 PT,Screening visit,West LA research suite,US,en-US
+P002,Jordan Lee,+15550100101,2026-09-10 10:30 PT,Follow-up visit,West LA research suite,US,en-US
+P003,Samira Ortiz,+15550100102,2026-09-10 13:00 PT,Consent review,Beverly-adjacent clinic annex,US,en-US
+P004,Alex Kim,+15550100103,2026-09-11 09:00 PT,Labs draw,West LA research suite,US,en-US
+P005,Riley Brooks,+15550100104,2026-09-12 08:00 PT,Fasting labs,West LA research suite,US,en-US

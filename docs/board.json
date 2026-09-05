@@ -1,0 +1,84 @@
+{
+  "product": "VisitLock",
+  "tagline": "Confirm research visits by phone \u2014 structured RSVPs, not voicemail limbo.",
+  "mode": "fixture",
+  "metrics": {
+    "confirmed": 3,
+    "called": 5,
+    "confirmation_rate": 60.0,
+    "reschedule_count": 1
+  },
+  "results": [
+    {
+      "participant_id": "P001",
+      "name": "Maya Chen",
+      "phone_masked": "***0100",
+      "visit_datetime": "2026-09-10 09:00 PT",
+      "visit_type": "Screening visit",
+      "site_label": "West LA research suite",
+      "mode": "fixture",
+      "call_id": "fixture-P001",
+      "visit_status": "yes",
+      "preferred_slot": "",
+      "notes": "Confirmed Thursday 9:00 AM visit; parking validated."
+    },
+    {
+      "participant_id": "P002",
+      "name": "Jordan Lee",
+      "phone_masked": "***0100",
+      "visit_datetime": "2026-09-10 10:30 PT",
+      "visit_type": "Follow-up visit",
+      "site_label": "West LA research suite",
+      "mode": "fixture",
+      "call_id": "fixture-P002",
+      "visit_status": "reschedule",
+      "preferred_slot": "2026-09-11 14:00 PT",
+      "notes": "Out of town Thu morning; prefers next Thu afternoon."
+    },
+    {
+      "participant_id": "P003",
+      "name": "Samira Ortiz",
+      "phone_masked": "***0100",
+      "visit_datetime": "2026-09-10 13:00 PT",
+      "visit_type": "Consent review",
+      "site_label": "Beverly-adjacent clinic annex",
+      "mode": "fixture",
+      "call_id": "fixture-P003",
+      "visit_status": "yes",
+      "preferred_slot": "",
+      "notes": "Confirmed; will bring signed consent packet."
+    },
+    {
+      "participant_id": "P004",
+      "name": "Alex Kim",
+      "phone_masked": "***0100",
+      "visit_datetime": "2026-09-11 09:00 PT",
+      "visit_type": "Labs draw",
+      "site_label": "West LA research suite",
+      "mode": "fixture",
+      "call_id": "fixture-P004",
+      "visit_status": "no_answer",
+      "preferred_slot": "",
+      "notes": "Voicemail after 2 rings; left research-visit callback note."
+    },
+    {
+      "participant_id": "P005",
+      "name": "Riley Brooks",
+      "phone_masked": "***0100",
+      "visit_datetime": "2026-09-12 08:00 PT",
+      "visit_type": "Fasting labs",
+      "site_label": "West LA research suite",
+      "mode": "fixture",
+      "call_id": "fixture-P005",
+      "visit_status": "yes",
+      "preferred_slot": "",
+      "notes": "Confirmed Friday fasting labs window."
+    }
+  ],
+  "matlab": {
+    "confirmation_rate": 60.0,
+    "no_show_risk": 10.0,
+    "engine": "MATLAB R2025b",
+    "source": "matlab_visitlock_metrics"
+  }
+}

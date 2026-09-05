@@ -1,0 +1,6 @@
+participant_id,visit_status
+P001,yes
+P002,reschedule
+P003,yes
+P004,no_answer
+P005,yes
