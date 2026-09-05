@@ -33,13 +33,14 @@ th { color:#9bb0d4; font-weight:600; background:#0f1728; }
 .badge.warn { background:#3a2e14; color:var(--warn); }
 .badge.bad { background:#3a1717; color:var(--bad); }
 .badge.mute { background:#1c2436; color:#9bb0d4; }
-tr.demo-hl td, .card.demo-hl, .metric.demo-hl {
-  outline: 2px solid #ffb020; outline-offset: -2px;
-  background: rgba(255,176,32,.16) !important;
-  box-shadow: inset 0 0 0 1px rgba(255,176,32,.28);
-  transition: background .2s ease, outline-color .2s ease;
+tr.demo-hl td, .card.demo-hl, .metric.demo-hl, tr.vl-focus td, .card.vl-focus {
+  outline: none;
+  background: rgba(110,168,254,.14) !important;
+  box-shadow: inset 0 0 0 1px rgba(110,168,254,.35);
+  transition: background .2s ease, box-shadow .2s ease;
 }
-tr.demo-hl td:first-child { box-shadow: inset 3px 0 0 #ffb020; }
+tr.demo-hl td:first-child, tr.vl-focus td:first-child { box-shadow: inset 3px 0 0 #6ea8fe; }
+tbody tr:hover td { background: rgba(110,168,254,.08); }
 .foot { color:#7f92b5; font-size:0.85rem; margin-top:14px; }
 @media (max-width:800px) { .grid { grid-template-columns:1fr; } }
 </style>
