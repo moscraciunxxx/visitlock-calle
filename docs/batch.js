@@ -117,10 +117,13 @@
       tickMetric(cc);
     }
     if (rate) {
-      rate.textContent =
-        typeof m.confirmation_rate === "number"
-          ? m.confirmation_rate.toFixed(1)
-          : String(m.confirmation_rate);
+      if (typeof m.confirmation_rate === "number") {
+        var rv = m.confirmation_rate;
+        rate.textContent =
+          (Math.round(rv) === rv ? String(Math.round(rv)) : rv.toFixed(1)) + "%";
+      } else {
+        rate.textContent = String(m.confirmation_rate);
+      }
       tickMetric(rate);
     }
     if (rs) {
@@ -128,8 +131,12 @@
       tickMetric(rs);
     }
     if (nsr && risk != null && risk !== "") {
-      nsr.textContent =
-        typeof risk === "number" ? risk.toFixed(1) : String(risk);
+      if (typeof risk === "number") {
+        nsr.textContent =
+          Math.round(risk) === risk ? String(Math.round(risk)) : risk.toFixed(1);
+      } else {
+        nsr.textContent = String(risk);
+      }
       tickMetric(nsr);
     }
   }
