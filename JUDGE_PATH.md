@@ -26,7 +26,7 @@ Secondary: python -m visitlock demo for local HUD only (not live door).
 |-------------|------|------|
 | Static HUD | docs/index.html | Live door |
 | Board JSON | docs/board.json | Fixture + MATLAB stamps |
-| HUD still | docs/assets/hud-still.png | Thumbnail twin still |
+| Public HUD | docs/index.html | Board source of truth (twin still deferred) |
 | MATLAB numbers | artifacts/matlab/ | confirmation_rate + no_show_risk |
 
 Do not make .slx or Blender reel the live door. VoiceBank is local-only (demo/VOICEBANK.md).

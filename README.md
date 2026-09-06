@@ -24,7 +24,7 @@ Open the GitHub Pages HUD cold:
 
 **https://moscraciunxxx.github.io/visitlock-calle/**
 
-You should see mode **fixture**, **3 / 5** confirmed, **60.0%** confirmation rate, **1** reschedule, MATLAB **no_show_risk 10.0**, plus the board-twin still. Numbers are baked into static HTML/JSON — no `.env`, no localhost, no live dials.
+You should see **Confirmation rate 60%**, **Confirmed / called 3 / 5**, **Reschedules 1**, and **No-show risk 10**. Numbers are baked into static HTML/JSON — no `.env`, no localhost, no live dials.
 
 Local mirror of the same door: open `docs/index.html` or run `python -m visitlock demo`.
 
@@ -54,9 +54,9 @@ MATLAB (`matlab/visitlock_metrics.m`) stamps batch outcomes into `artifacts/matl
 
 The HUD surfaces the no-show risk next to the confirmation metrics.
 
-## Board twin (honest)
+## Board source of truth
 
-`docs/assets/hud-still.png` is a **Blender Metal still** of the coordinator board — a visual twin for thumbnails/demo, **not** a second live door. The interactive try-it is the static Pages HUD above.
+The public Pages HUD is the coordinator board for this batch. A Blender twin still is omitted until it meets product quality — this board is the source of truth.
 
 ## Demo video
 

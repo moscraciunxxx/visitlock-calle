@@ -110,7 +110,7 @@ h1 {{ margin:0 0 6px; font-size:1.75rem; letter-spacing:-0.02em; }}
   max-width:1100px; margin:18px auto; padding:0 24px; }}
 .card {{ background:var(--card); border:1px solid #243049; border-radius:14px; padding:18px 16px; }}
 .metric {{ font-size:2rem; font-weight:700; }}
-.label {{ color:#9bb0d4; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; }}
+.label {{ color:#9bb0d4; font-size:0.85rem; letter-spacing:0.02em; }}
 .panel {{ max-width:1100px; margin:8px auto 40px; padding:0 24px; }}
 table {{ width:100%; border-collapse:collapse; background:var(--card);
   border:1px solid #243049; border-radius:14px; overflow:hidden; }}
@@ -128,14 +128,14 @@ th {{ color:#9bb0d4; font-weight:600; background:#0f1728; }}
 <body>
 <header>
   <h1>VisitLock</h1>
-  <p class="tag">{_esc(board.get('tagline',''))} · mode: <strong>{_esc(board.get('mode','fixture'))}</strong></p>
+  <p class="tag">{_esc(board.get('tagline',''))}</p>
 </header>
 <section class="grid" aria-label="Key metrics">
-  <div class="card"><div class="label">confirmed / called</div>
+  <div class="card"><div class="label">Confirmation rate</div>
+    <div class="metric" id="confirmation-rate">{rate}%</div></div>
+  <div class="card"><div class="label">Confirmed / called</div>
     <div class="metric" id="confirmed-called">{confirmed} / {called}</div></div>
-  <div class="card"><div class="label">confirmation_rate %</div>
-    <div class="metric" id="confirmation-rate">{rate}</div></div>
-  <div class="card"><div class="label">reschedule_count</div>
+  <div class="card"><div class="label">Reschedules</div>
     <div class="metric" id="reschedule-count">{reschedules}</div></div>
 </section>
 <section class="panel">
@@ -147,7 +147,7 @@ th {{ color:#9bb0d4; font-weight:600; background:#0f1728; }}
 {table_body}
     </tbody>
   </table>
-  <p class="foot">Research-visit confirmations for coordinators. Demo uses fictional 555 numbers. Not affiliated with any hospital.</p>
+  <p class="foot">Coordinator HUD for research-visit confirmations. Demo participants use fictional 555 numbers.</p>
 </section>
 <script id="board-data" type="application/json">{json.dumps(board)}</script>
 </body>

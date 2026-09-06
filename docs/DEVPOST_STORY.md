@@ -38,12 +38,12 @@ Fixture snapshot: **3 / 5** confirmed, **60.0%** confirmation rate, **1** resche
 - **JSON Schema** on call results so RSVP status is machine-checkable, not free text.
 - **Static `docs/index.html` + `docs/board.json`** published on GitHub Pages as the stranger-openable door.
 - **MATLAB** script stamps metrics into `artifacts/matlab/` and the board JSON.
-- **Blender** Metal still (`docs/assets/hud-still.png`) as an honest board twin for thumbnails — not a second live door.
+- Public **Pages HUD** is the board source of truth (Blender twin still deferred until product-quality).
 - **Contribution pack** for the awesome list: skill + app pointer (PR #314).
 
 ## Challenges we ran into
 
-Keeping the public story honest was harder than wiring the happy path. The live door had to work cold on Pages with fixture numbers baked in, while live dials stayed behind a gitignored `.env`. We also had to draw a clear line versus generic appointment-confirm tools: batch study visits, ledger, confirmation_rate HUD, and research-visit consent language. Matching MATLAB-quoted risk to what the HUD shows — and saying plainly that the Blender image is a twin still, not the interactive demo — took more editing than expected.
+Keeping the public story honest was harder than wiring the happy path. The live door had to work cold on Pages with fixture numbers baked in, while live dials stayed behind a gitignored `.env`. We also had to draw a clear line versus generic appointment-confirm tools: batch study visits, ledger, confirmation_rate HUD, and research-visit consent language. Matching MATLAB-quoted risk to what the HUD shows — and keeping the public board as the only source of truth — took more editing than expected.
 
 ## Accomplishments that we're proud of
 
