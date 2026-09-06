@@ -50,3 +50,6 @@ demo/SOUND_QC.*
 demo/AUDIO_FIX_NOTES.md
 demo/YOUTUBE_UPLOAD.txt
 demo/devpost-fill-proof.txt
+
+# Live CALL-E proof artifacts (local; may include API payloads)
+demo/calle_proof/
