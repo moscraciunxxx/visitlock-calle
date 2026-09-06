@@ -68,7 +68,7 @@ Local cut (not in git): `demo/visitlock-demo.mp4`
 
 Upstream skill/app pointer for CALL-E:
 
-https://github.com/CALLE-AI/awesome-phone-call-agents/pull/314
+https://github.com/CALLE-AI/awesome-phone-call-agents/pull/333
 
 Pack in this repo: `contribution/skills/visitlock/` and `contribution/apps/python/visitlock/`.
 

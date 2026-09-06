@@ -5,7 +5,7 @@ Contest: CALL-E / Devpost. Software draft: https://devpost.com/software/visitloc
 
 **Public try-it:** https://moscraciunxxx.github.io/visitlock-calle/  
 **Repo:** https://github.com/moscraciunxxx/visitlock-calle  
-**Awesome PR:** https://github.com/CALLE-AI/awesome-phone-call-agents/pull/314  
+**Awesome PR:** https://github.com/CALLE-AI/awesome-phone-call-agents/pull/333  
 **Tagline:** Confirm research visits by phone — structured RSVPs, not voicemail limbo.  
 **Built with:** Python, CALL-E (calle-ai), JSON Schema, static HUD / GitHub Pages, MATLAB, Blender, unittest, CLI
 
@@ -39,7 +39,7 @@ Fixture snapshot: **3 / 5** confirmed, **60.0%** confirmation rate, **1** resche
 - **Static `docs/index.html` + `docs/board.json`** published on GitHub Pages as the stranger-openable door.
 - **MATLAB** script stamps metrics into `artifacts/matlab/` and the board JSON.
 - Public **Pages HUD** is the board source of truth (Blender twin still deferred until product-quality).
-- **Contribution pack** for the awesome list: skill + app pointer (PR #314).
+- **Contribution pack** for the awesome list: skill + app pointer (PR #333).
 
 ## Challenges we ran into
 

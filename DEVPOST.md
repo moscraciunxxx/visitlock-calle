@@ -25,7 +25,7 @@ Fill on the Devpost form only. Do not commit a personal address here (use a rese
 |-------|--------|
 | Try it out | https://moscraciunxxx.github.io/visitlock-calle/ |
 | GitHub repo | https://github.com/moscraciunxxx/visitlock-calle |
-| Awesome PR | https://github.com/CALLE-AI/awesome-phone-call-agents/pull/314 |
+| Awesome PR | https://github.com/CALLE-AI/awesome-phone-call-agents/pull/333 |
 | Thumbnail | Public HUD (board is source of truth) |
 
 ## Video
