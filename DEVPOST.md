@@ -1,6 +1,7 @@
 # Devpost field pack — VisitLock
 
-CALL-E account email placeholder: vcerv001@gold.ac.uk (correct if needed).
+Paste-ready narrative: **`docs/DEVPOST_STORY.md`** (Inspiration → What’s next).
+Do **not** submit the Devpost software entry until video + final links are set.
 
 ## Project name
 
@@ -16,34 +17,28 @@ Python, CALL-E, calle-ai, JSON Schema, HTTP HUD, GitHub Pages, MATLAB, Blender, 
 
 ## CALL-E account email
 
-vcerv001@gold.ac.uk
+Fill on the Devpost form only. Do not commit a personal address here (use a reserved fictional contact in public docs if a placeholder is required).
 
-## Description (paste)
+## Links
 
-### The problem
+| Field | Value |
+|-------|--------|
+| Try it out | https://moscraciunxxx.github.io/visitlock-calle/ |
+| GitHub repo | https://github.com/moscraciunxxx/visitlock-calle |
+| Awesome PR | https://github.com/CALLE-AI/awesome-phone-call-agents/pull/314 |
+| Thumbnail | docs/assets/hud-still.png (Blender Metal twin still) |
 
-Clinical and research coordinators burn hours chasing visit confirmations. Missed calls and vague voicemails turn into no-shows and wasted study slots. Existing tools either blast SMS or confirm one appointment at a time — they do not give a batch confirmation rate a coordinator can act on.
+## Video
 
-### What it does
+Pending upload. Local cut (gitignored / untracked): `demo/visitlock-demo.mp4`
 
-VisitLock batch-calls participants from a CSV of research visit slots using CALL-E. Each call uses explicit research-visit consent language and returns structured RSVP fields: visit_status (yes|no|reschedule|no_answer|unknown), preferred_slot, and notes. An idempotent ledger prevents double-dialing on re-runs. A coordinator HUD shows confirmed/called, confirmation_rate %, and reschedule_count. MATLAB quotes confirmation_rate and a no_show_risk score into the board. Judges open docs/index.html (GitHub Pages) with non-zero fixture numbers — no localhost required.
+Suggested YouTube title: `VisitLock — CALL-E research-visit confirmations (Devpost demo)`
 
-### How CALL-E enables it
+Suggested description:
+VisitLock batch-confirms research visit slots with CALL-E structured RSVPs. Public HUD: https://moscraciunxxx.github.io/visitlock-calle/ — confirmation_rate 60%, 3/5 confirmed, 1 reschedule, MATLAB no_show_risk 10.0.
 
-CALL-E CalleClient.calls.create_and_wait places the outbound confirmation call and returns schema-constrained structured results. VisitLock supplies result_schema and recipient_result_schema so the agent must capture visit RSVP status. Without an API key, a deterministic fixture pipeline preserves the same schemas for CI and Devpost demos.
+## Setup reminders
 
-### Setup / try it
-
-Static (no install): open docs/index.html (GitHub Pages).
-
-Local: pip install -e . && python -m visitlock demo
-
-Live: set CALLE_API_KEY and CALLE_BASE_URL, then python -m visitlock run --csv your.csv --live
-
-## Try it out link guidance
-
-Prefer GitHub Pages URL for docs/ once published. Fallback: docs/index.html in the browser.
-
-## Thumbnail
-
-docs/assets/hud-still.png (Blender Metal twin still)
+- Static (no install): Pages HUD above — fixture, no `.env`.
+- Local: `pip install -e . && python -m visitlock demo`
+- Live: set `CALLE_API_KEY` + `CALLE_BASE_URL` in gitignored `.env`, then `python -m visitlock run --csv … --live`

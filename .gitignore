@@ -8,23 +8,45 @@ dist/
 build/
 .venv/
 venv/
-.env
-.env.*
-!.env.example
-
-# VisitLock runtime
-visitlock_ledger.json
-visitlock_board.json
-*.pem
-*_api_key*
-.DS_Store
 .pytest_cache/
 .mypy_cache/
 .coverage
 htmlcov/
 
-# VoiceBank local only
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*_api_key*
+
+# VisitLock runtime (regenerated locally)
+visitlock_ledger.json
+visitlock_board.json
+.DS_Store
+
+# VoiceBank / audio — local only
 VoiceBank/
 bank/
 wavs/
 *.wav
+
+# Demo pipeline artifacts (keep scripts + VOICEBANK.md; not media dumps)
+demo/mux_work/
+demo/mux_*/
+demo/renders/
+demo/renders_*/
+demo/frames/
+demo/frames_*/
+demo/capture/
+demo/capture_*/
+demo/human/
+demo/yt_refs/
+demo/*.log
+demo/*.mp4
+demo/vo_spoken*.txt
+demo/mux_meta.json
+demo/SOUND_QC.*
+demo/AUDIO_FIX_NOTES.md
+demo/YOUTUBE_UPLOAD.txt
+demo/devpost-fill-proof.txt

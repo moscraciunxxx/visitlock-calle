@@ -2,64 +2,96 @@
 
 **Confirm research visits by phone — structured RSVPs, not voicemail limbo.**
 
-VisitLock helps a **clinical/research coordinator** batch-confirm study visit slots with CALL-E. Coordinators get structured visit_status (yes|no|reschedule|no_answer|unknown) plus a HUD: confirmed/called, confirmation_rate %, reschedule_count.
+For a **clinical/research coordinator** who needs batch visit confirmations, not one-off appointment reminders.
 
 > Not affiliated with any hospital. Sample data uses fictional 555 numbers and LA-adjacent clinic flavor only.
 
-**Judge live door:** docs/index.html (GitHub Pages) — not localhost. See JUDGE_PATH.md (CALL-E Devpost #30579).
+## 30-second map
 
-## Problem
+| | |
+|---|---|
+| **Problem** | Missed / unclear visit confirmations → no-shows and wasted study slots |
+| **Phone step** | CALL-E places (or fixtures) confirmation calls with research-visit consent language |
+| **Board** | Structured `visit_status` → confirmed/called, confirmation_rate %, reschedule_count |
+| **MATLAB risk** | Quotes `confirmation_rate` + `no_show_risk` onto the board |
+| **Try it** | [Public fixture HUD](https://moscraciunxxx.github.io/visitlock-calle/) — no API key |
 
-Missed or unclear visit confirmations cause no-shows and wasted research slots.
+**Spine:** problem → phone confirm → rate on board → MATLAB risk → try fixture.
 
-## What it does
+## Try the fixture (no key)
 
-1. Batch CSV of research/clinical study visit slots (5-sample included).
-2. CALL-E call (or fixture) with explicit research-visit consent language.
-3. Structured RSVP via result_schema / recipient_result_schema.
-4. Idempotent batch ledger so re-runs do not double-dial.
-5. Static docs/index.html for GitHub Pages / Devpost try-it.
-6. MATLAB quotes confirmation_rate + no_show_risk into artifacts/matlab/ and stamps board JSON.
-7. Blender Metal still: docs/assets/hud-still.png (not a Blender-only door).
+Open the GitHub Pages HUD cold:
 
-Different from appointment-confirm: batch study visits, ledger, confirmation_rate HUD.
+**https://moscraciunxxx.github.io/visitlock-calle/**
 
-## How CALL-E is used
+You should see mode **fixture**, **3 / 5** confirmed, **60.0%** confirmation rate, **1** reschedule, MATLAB **no_show_risk 10.0**, plus the board-twin still. Numbers are baked into static HTML/JSON — no `.env`, no localhost, no live dials.
 
-calle-ai SDK CalleClient.calls.create_and_wait when CALLE_API_KEY is set. Fixture mode otherwise.
+Local mirror of the same door: open `docs/index.html` or run `python -m visitlock demo`.
 
-## Setup
+## How it uses CALL-E
+
+When `CALLE_API_KEY` is set in a **gitignored** `.env`, VisitLock uses the `calle-ai` SDK (`CalleClient.calls.create_and_wait`) with `result_schema` / `recipient_result_schema` so each call returns structured RSVP fields:
+
+`visit_status` ∈ `yes | no | reschedule | no_answer | unknown`, plus `preferred_slot` and `notes`.
+
+Without a key, the same schemas are filled by a **deterministic fixture** pipeline (CI, Pages, Devpost try-it). Live dials need:
+
+```bash
+cp .env.example .env   # then set CALLE_API_KEY (never commit .env)
+# CALLE_BASE_URL=https://api.heycall-e.com
+python -m visitlock run --csv path/to/authorized.csv --live
+```
+
+Fixture path works with zero secrets. Live path is opt-in and only for authorized numbers.
+
+## MATLAB risk quote
+
+MATLAB (`matlab/visitlock_metrics.m`) stamps batch outcomes into `artifacts/matlab/` and the board:
+
+- `confirmation_rate=60.0`
+- `no_show_risk=10.0`
+- confirmed=3 / called=5 / reschedule_count=1
+
+The HUD surfaces the no-show risk next to the confirmation metrics.
+
+## Board twin (honest)
+
+`docs/assets/hud-still.png` is a **Blender Metal still** of the coordinator board — a visual twin for thumbnails/demo, **not** a second live door. The interactive try-it is the static Pages HUD above.
+
+## Demo video
+
+_Placeholder — link the YouTube upload here when ready._
+
+Local cut (not in git): `demo/visitlock-demo.mp4`
+
+## Awesome PR
+
+Upstream skill/app pointer for CALL-E:
+
+https://github.com/CALLE-AI/awesome-phone-call-agents/pull/314
+
+Pack in this repo: `contribution/skills/visitlock/` and `contribution/apps/python/visitlock/`.
+
+## Setup (local)
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e .
-cp .env.example .env
+cp .env.example .env   # optional; only needed for --live
 ```
 
-## Try it (Gate C first)
+| Command | Role |
+|---------|------|
+| `python -m visitlock demo` | Fixture batch + HUD numbers |
+| `python -m visitlock run --csv path` | Fixture/run against CSV |
+| `python -m visitlock run --csv path --live` | Live CALL-E (needs `CALLE_API_KEY`) |
+| `python -m visitlock serve` | Local HUD server |
+| `python -m visitlock export-docs` | Refresh `docs/` static export |
+| `PYTHONPATH=. python -m unittest discover -s tests -v` | Tests |
 
-1. Open docs/index.html (or GitHub Pages) — 3/5, 60%, 1 reschedule, MATLAB no_show_risk.
-2. Local: python -m visitlock demo
+## Diff vs appointment-confirm
 
-## CLI
-
-- python -m visitlock demo
-- python -m visitlock run --csv path
-- python -m visitlock run --csv path --live
-- python -m visitlock serve
-- python -m visitlock export-docs
-
-## Live CALL-E
-
-Set CALLE_API_KEY and CALLE_BASE_URL=https://api.heycall-e.com then run --live on authorized CSV only.
-
-## Tests
-
-PYTHONPATH=. python -m unittest discover -s tests -v
-
-## Awesome PR pack
-
-contribution/skills/visitlock/ and contribution/apps/python/visitlock/
+Batch study-visit CSV, idempotent dial ledger (no double-dial on re-runs), confirmation_rate HUD, research-visit consent language — not single consumer appointment confirm.
 
 ## License
 
